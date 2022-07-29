@@ -4,6 +4,6 @@ const links = {
     spotify: "https://www.spotify.com/",
 };
 
-const alias = "yandex";
+const alias = "google";
 
 console.log(links[alias]);
