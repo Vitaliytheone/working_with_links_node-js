@@ -4,10 +4,10 @@ const path = require("path");
 const linksDevFilePath = path.resolve(__dirname, "./links.dev.txt");
 const linksProdFilePath = path.resolve(__dirname, "./links.prod.txt");
 
-const LinksFilePath = process.env.LINKS_TYPE === "prod" ? linksProdFilePath : linksDevFilePath;
+const linksFilePath = process.env.LINKS_TYPE === "prod" ? linksProdFilePath : linksDevFilePath;
 
 async function printLinkByAlias(alias) {
-    const linksFileContent = await fs.readFile(LinksFilePath, "utf-8");
+    const linksFileContent = await fs.readFile(linksFilePath, "utf-8");
 
     const links = linksFileContent
         .split("\n")

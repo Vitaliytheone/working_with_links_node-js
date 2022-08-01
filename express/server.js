@@ -9,3 +9,5 @@ app.get("/:alias", resolveAlias);
 app.use(notFound);
 
 const PORT = 3000;
+
+app.listen(PORT, () => console.info(`Server started on port §${PORT}`));
