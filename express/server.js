@@ -1,5 +1,8 @@
 const express = require("express");
 const { urlLogger } = require("./middlewares/urlLogger");
+const { notFound } = require("./middlewares/notFound");
+const { resolveAlias } = require("./controllers/resolveAlias");
+const { ping } = require("./controllers/ping");
 
 const app = express();
 
