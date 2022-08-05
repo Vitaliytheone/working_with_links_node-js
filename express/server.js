@@ -12,10 +12,10 @@ app.use(urlLogger);
 
 app.get("/ping", ping);
 app.get("/:alias", resolveAlias);
-app.post("/alias", addAlias);
+// app.post("/alias", addAlias);
 
 app.use(notFound);
 
 const PORT = 3000;
 
-app.listen(PORT, () => console.info(`Server started on port §${PORT}`));
+app.listen(PORT, () => console.info(`Server started on port ${PORT}`));
