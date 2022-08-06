@@ -1,6 +1,6 @@
 const path = require("path");
 
-const dbPath = path.dirname("../db");
+const dbPath = path.resolve("db");
 
 module.exports = {
     dbPath,

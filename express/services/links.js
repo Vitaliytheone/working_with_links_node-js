@@ -3,8 +3,8 @@ const fs = require("fs").promises;
 
 const { dbPath } = require("../config");
 
-const linksDevFilePath = path.resolve(__dirname, "./links.dev.json");
-const linksProdFilePath = path.resolve(__dirname, "./links.prod.json");
+const linksDevFilePath = path.resolve(dbPath, "./links.dev.json");
+const linksProdFilePath = path.resolve(dbPath, "./links.prod.json");
 
 const linksFilePath = process.env.LINKS_TYPE === "prod" ? linksProdFilePath : linksDevFilePath;
 
