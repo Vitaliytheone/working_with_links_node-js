@@ -12,7 +12,7 @@ app.use(urlLogger);
 
 app.get("/ping", ping);
 app.get("/:alias", resolveAlias);
-// app.post("/alias", addAlias);
+app.post("/alias", addAlias);
 
 app.use(notFound);
 
