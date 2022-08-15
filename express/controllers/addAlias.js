@@ -1,11 +1,15 @@
 const linksService = require("../services/links");
 
-async function addAlias(request, response) {
-    const { alias, link } = request.body;
+async function addAlias(request, response, next) {
+    try {
+        const { alias, link } = request.body;
 
-    await linksService.addAlias(alias, link);
+        await linksService.addAlias(alias, link);
 
-    return response.send({ status: "success" });
+        return response.send({ status: "success" });
+    } catch (error) {
+        next(error);
+    }
 }
 
 module.exports = { addAlias };

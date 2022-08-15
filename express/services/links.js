@@ -2,6 +2,7 @@ const path = require("path");
 const fs = require("fs").promises;
 
 const { dbPath } = require("../config");
+const { BadRequestError } = require("../modules/error");
 
 const linksDevFilePath = path.resolve(dbPath, "./links.dev.json");
 const linksProdFilePath = path.resolve(dbPath, "./links.prod.json");
@@ -16,6 +17,10 @@ async function getByAlias(alias) {
 
 async function addAlias(alias, link) {
     const links = require(linksFilePath);
+
+    if (links[alias]) {
+        throw new BadRequestError("alias_already_exists");
+    }
 
     links[alias] = link;
 
