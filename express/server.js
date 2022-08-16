@@ -4,6 +4,7 @@ const { notFound } = require("./middlewares/notFound");
 const { resolveAlias } = require("./controllers/resolveAlias");
 const { ping } = require("./controllers/ping");
 const { addAlias } = require("./controllers/addAlias");
+const { errorHandler } = require("./middlewares/errorHandler");
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.get("/:alias", resolveAlias);
 app.post("/alias", addAlias);
 
 app.use(notFound);
+app.use(errorHandler);
 
 const PORT = 3000;
 
