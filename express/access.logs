@@ -3,3 +3,4 @@ GET /ping - 200 0.612 ms
 GET /ping - 304 0.674 ms
 GET /ping - 304 0.338 ms
 GET /ping - 304 0.300 ms
+POST /alias - 200 2.452 ms
