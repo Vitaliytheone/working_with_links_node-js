@@ -1,0 +1,5 @@
+GET /pin - 404 3.601 ms
+GET /ping - 200 0.612 ms
+GET /ping - 304 0.674 ms
+GET /ping - 304 0.338 ms
+GET /ping - 304 0.300 ms
