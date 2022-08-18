@@ -1,13 +1,9 @@
-const path = require("path");
 const fs = require("fs").promises;
 
-const { dbPath } = require("../config");
 const { BadRequestError } = require("../modules/error");
+const { getDatabaseFile } = require("../utils/getDatabaseFile");
 
-const linksDevFilePath = path.resolve(dbPath, "./links.dev.json");
-const linksProdFilePath = path.resolve(dbPath, "./links.prod.json");
-
-const linksFilePath = process.env.LINKS_TYPE === "prod" ? linksProdFilePath : linksDevFilePath;
+const linksFilePath = getDatabaseFile();
 
 async function getByAlias(alias) {
     const links = require(linksFilePath);
