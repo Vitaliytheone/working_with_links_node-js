@@ -5,6 +5,7 @@ const { ping } = require("./controllers/ping");
 const { addAlias } = require("./controllers/addAlias");
 const { errorHandler } = require("./middlewares/errorHandler");
 const { accessLogs } = require("./middlewares/accessLogs");
+const { dumpDatabase } = require("./utils/dumpDatabase");
 
 const app = express();
 
@@ -23,3 +24,5 @@ app.use(errorHandler);
 const PORT = 3000;
 
 app.listen(PORT, () => console.info(`Server started on port ${PORT}`));
+
+dumpDatabase();
