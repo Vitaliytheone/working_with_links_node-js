@@ -6,6 +6,7 @@ const { addAlias } = require("./controllers/addAlias");
 const { errorHandler } = require("./middlewares/errorHandler");
 const { accessLogs } = require("./middlewares/accessLogs");
 const { dumpDatabase } = require("./utils/dumpDatabase");
+const { monitorProcess } = require("./utils/monitorProcess");
 
 const app = express();
 
@@ -26,3 +27,4 @@ const PORT = 3000;
 app.listen(PORT, () => console.info(`Server started on port ${PORT}`));
 
 dumpDatabase();
+monitorProcess();
