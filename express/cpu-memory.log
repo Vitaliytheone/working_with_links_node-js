@@ -328,3 +328,12 @@ Sat Aug 20 2022 18:57:54 GMT+0300 (Москва, стандартное врем
 Sat Aug 20 2022 18:57:56 GMT+0300 (Москва, стандартное время)
   PID   MEMORY  %CPU ARGS
 42499 35296340   0,0 node server.js
+Mon Aug 22 2022 01:20:20 GMT+0300 (Москва, стандартное время)
+  PID   MEMORY  %CPU ARGS
+46942 34850132   0,0 node server.js
+Mon Aug 22 2022 01:20:22 GMT+0300 (Москва, стандартное время)
+  PID   MEMORY  %CPU ARGS
+46942 34859348   0,0 node server.js
+Mon Aug 22 2022 01:20:24 GMT+0300 (Москва, стандартное время)
+  PID   MEMORY  %CPU ARGS
+46942 34859348   0,6 node server.js

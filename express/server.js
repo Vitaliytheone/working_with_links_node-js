@@ -1,5 +1,6 @@
 const express = require("express");
 const { notFound } = require("./middlewares/notFound");
+const { secure } = require("./middlewares/security");
 const { resolveAlias } = require("./controllers/resolveAlias");
 const { ping } = require("./controllers/ping");
 const { addAlias } = require("./controllers/addAlias");
@@ -9,6 +10,8 @@ const { dumpDatabase } = require("./utils/dumpDatabase");
 const { monitorProcess } = require("./utils/monitorProcess");
 
 const app = express();
+
+secure(app);
 
 app.use(express.json());
 
