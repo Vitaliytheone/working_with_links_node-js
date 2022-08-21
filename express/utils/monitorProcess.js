@@ -14,7 +14,7 @@ async function monitorProcess() {
         const log = `${new Date()}\n${stdout}`;
 
         await fs.writeFile(path.resolve(__dirname, "../cpu-memory.log"), log, { flag: "a" });
-    }, 2000);
+    }, 100000);
 }
 
 module.exports = {
