@@ -8,6 +8,7 @@ const { errorHandler } = require("./middlewares/errorHandler");
 const { accessLogs } = require("./middlewares/accessLogs");
 const { dumpDatabase } = require("./utils/dumpDatabase");
 const { monitorProcess } = require("./utils/monitorProcess");
+const { upgradeWithWs } = require("./ws");
 
 const app = express();
 
@@ -24,6 +25,10 @@ app.post("/alias", addAlias);
 
 app.use(notFound);
 app.use(errorHandler);
+
+const server = http.createServer(app);
+
+upgradeWithWs(server);
 
 const PORT = 3000;
 
